@@ -1,0 +1,479 @@
+/* ── Read View ── */
+.timeline {
+  position: relative;
+  min-height: 100vh;
+  background: var(--paper);
+}
+
+.viewToggle {
+  font-family: var(--font-oswald), sans-serif;
+  font-weight: 500;
+  font-size: 12px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: rgba(11,11,11,0.5);
+  cursor: pointer;
+  padding: 4px 8px;
+  border: 1px solid rgba(11,11,11,0.15);
+  background: none;
+}
+
+.viewToggle:hover {
+  color: var(--ink);
+  border-color: var(--ink);
+}
+
+.chromeMeta {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  font-family: var(--font-oswald), sans-serif;
+  font-weight: 600;
+  font-size: 12px;
+  letter-spacing: 2px;
+  color: rgba(11,11,11,0.5);
+  text-transform: uppercase;
+}
+
+/* ── Left Rail ── */
+.readBody {
+  display: flex;
+  position: relative;
+  padding-bottom: 160px;
+}
+
+.rail {
+  position: sticky;
+  top: 0;
+  left: 0;
+  width: 44px;
+  height: 100vh;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+}
+
+.railTrack {
+  position: relative;
+  width: 3px;
+  height: 70vh;
+  background: rgba(11,11,11,0.08);
+}
+
+.railFill {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: var(--red);
+  transition: height 300ms ease;
+}
+
+.railDot {
+  position: absolute;
+  left: 50%;
+  width: 15px;
+  height: 15px;
+  background: var(--red);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: var(--glow-rail);
+  animation: glyphBreath 5s ease-in-out infinite;
+  transition: top 300ms ease;
+}
+
+.railLabel {
+  position: absolute;
+  left: 50%;
+  bottom: -20px;
+  transform: translateX(-50%) rotate(180deg);
+  writing-mode: vertical-rl;
+  font-family: var(--font-oswald), sans-serif;
+  font-weight: 500;
+  font-size: 10px;
+  letter-spacing: 2px;
+  color: rgba(11,11,11,0.35);
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+/* ── Entry Stack ── */
+.entryStack {
+  flex: 1;
+  padding: 80px 100px 0 76px;
+  display: flex;
+  flex-direction: column;
+  gap: 44px;
+}
+
+.entryCard {
+  position: relative;
+  padding: 28px 0 28px 24px;
+  transition: opacity 300ms ease, filter 300ms ease, transform 300ms ease;
+  transform-origin: left center;
+}
+
+.entryCardFocused {
+  opacity: 1;
+  filter: none;
+  transform: scale(1);
+  border-left: 2.5px solid var(--red);
+  background: var(--paper);
+}
+
+.entryCardNear {
+  opacity: 0.32;
+  filter: blur(1px);
+  transform: scale(0.94);
+  cursor: pointer;
+}
+
+.entryCardFar {
+  opacity: 0.13;
+  filter: blur(2.2px);
+  transform: scale(0.87);
+  cursor: pointer;
+}
+
+.entryDay {
+  font-family: var(--font-geist), sans-serif;
+  font-weight: 700;
+  font-size: 52px;
+  color: var(--red);
+  line-height: 1;
+}
+
+.entryDate {
+  font-family: var(--font-mono), monospace;
+  font-size: 11px;
+  letter-spacing: 1px;
+  color: rgba(11,11,11,0.5);
+  text-transform: uppercase;
+  margin-top: 6px;
+}
+
+.entryHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 16px;
+  margin-top: 12px;
+}
+
+.entryTitle {
+  font-family: var(--font-geist), sans-serif;
+  font-weight: 700;
+  font-size: 28px;
+  text-transform: uppercase;
+  letter-spacing: -1px;
+  line-height: 1.1;
+  color: var(--ink);
+  flex: 1;
+}
+
+.seedChips {
+  display: flex;
+  gap: 6px;
+  flex-shrink: 0;
+}
+
+.seedChip {
+  width: 22px;
+  height: 22px;
+  background: var(--ink);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.entryBody {
+  font-family: var(--font-mono), monospace;
+  font-size: 16px;
+  line-height: 2;
+  max-width: 720px;
+  color: var(--body-ink);
+  margin-top: 16px;
+}
+
+.entryBody p {
+  margin-bottom: 1.2em;
+}
+
+.highlight {
+  background: var(--red);
+  color: var(--paper);
+  padding: 0 6px;
+}
+
+.evidenceBtn {
+  display: inline-block;
+  margin-top: 12px;
+  border: 2.5px solid var(--ink);
+  padding: 8px 16px;
+  font-family: var(--font-oswald), sans-serif;
+  font-weight: 700;
+  font-size: 14px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--ink);
+}
+
+.evidenceBtn:hover {
+  background: var(--ink);
+  color: var(--paper);
+}
+
+.sourceNames {
+  font-family: var(--font-mono), monospace;
+  font-size: 10px;
+  color: rgba(11,11,11,0.4);
+  margin-top: 6px;
+  letter-spacing: 0.5px;
+}
+
+/* ── Time Gap Markers ── */
+.gapMarker {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 8px 0;
+}
+
+.gapRule {
+  flex: 1;
+  height: 1px;
+  background: rgba(11,11,11,0.12);
+}
+
+.gapText {
+  font-family: var(--font-major), monospace;
+  font-size: 17px;
+  color: rgba(11,11,11,0.35);
+  white-space: nowrap;
+  text-transform: uppercase;
+}
+
+/* ── Gradient Masks ── */
+.gradientTop {
+  position: sticky;
+  top: 0;
+  left: 44px;
+  right: 0;
+  height: 120px;
+  background: linear-gradient(to bottom, var(--paper), transparent);
+  z-index: 1;
+  pointer-events: none;
+}
+
+.gradientBottom {
+  position: sticky;
+  bottom: 160px;
+  left: 44px;
+  right: 0;
+  height: 120px;
+  background: linear-gradient(to top, var(--paper), transparent);
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* ── Progress Footer ── */
+.progressFooter {
+  position: fixed;
+  bottom: 110px;
+  left: 0;
+  right: 0;
+  background: var(--ink);
+  padding: 10px var(--gutter);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 10;
+}
+
+.progressText {
+  font-family: var(--font-mono), monospace;
+  font-size: 10px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: rgba(237,241,242,0.5);
+}
+
+.progressBarOuter {
+  width: 600px;
+  height: 3px;
+  background: rgba(237,241,242,0.12);
+}
+
+.progressBarFill {
+  height: 100%;
+  background: var(--red);
+  transition: width 300ms ease;
+}
+
+/* ── Scrubber Dock ── */
+.scrubberDock {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 10;
+}
+
+/* ══════════════════════════════════════
+   MAP VIEW
+   ══════════════════════════════════════ */
+
+.mapTimeline {
+  position: relative;
+  min-height: 100vh;
+  background: var(--ink);
+  color: var(--paper);
+}
+
+.mapBody {
+  padding: 60px var(--gutter);
+  padding-bottom: 160px;
+  overflow-x: auto;
+}
+
+.punchCard {
+  display: grid;
+  gap: 0;
+  min-width: max-content;
+}
+
+.partHeader {
+  font-family: var(--font-oswald), sans-serif;
+  font-weight: 500;
+  font-size: 10px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: rgba(237,241,242,0.4);
+  padding: 4px 0;
+  border-bottom: 1px solid rgba(237,241,242,0.1);
+  text-align: center;
+}
+
+.seedRow {
+  display: contents;
+}
+
+.seedLabel {
+  position: sticky;
+  left: 0;
+  background: var(--ink);
+  font-family: var(--font-oswald), sans-serif;
+  font-weight: 600;
+  font-size: 11px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  padding: 8px 12px 8px 0;
+  white-space: nowrap;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.cell {
+  width: 18px;
+  height: 18px;
+  margin: 2px;
+  border: 1px solid rgba(237,241,242,0.06);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  position: relative;
+}
+
+.cell:hover {
+  border-color: rgba(237,241,242,0.3);
+}
+
+.cellFilled {
+  background: currentColor;
+  opacity: 0.7;
+  animation: cellPulse 5s ease-in-out infinite;
+}
+
+.cellZero {
+  background: var(--yellow) !important;
+  opacity: 1;
+  animation: none;
+}
+
+.cellActive {
+  opacity: 1;
+  box-shadow: 0 0 6px currentColor;
+}
+
+.dayLabel {
+  font-family: var(--font-mono), monospace;
+  font-size: 8px;
+  color: rgba(237,241,242,0.3);
+  text-align: center;
+  padding-top: 4px;
+  white-space: nowrap;
+}
+
+/* ── Map Chrome Overrides ── */
+.mapChrome {
+  background: var(--ink);
+}
+
+.mapProgressFooter {
+  composes: progressFooter;
+  background: rgba(237,241,242,0.08);
+}
+
+.mapProgressText {
+  composes: progressText;
+  color: rgba(237,241,242,0.4);
+}
+
+/* ── Responsive ── */
+@media (max-width: 899px) {
+  .rail {
+    display: none;
+  }
+
+  .entryStack {
+    padding: 40px var(--gutter) 0;
+  }
+
+  .entryDay {
+    font-size: 36px;
+  }
+
+  .entryTitle {
+    font-size: 22px;
+  }
+
+  .entryBody {
+    font-size: 12.5px;
+    line-height: 1.85;
+  }
+
+  .progressBarOuter {
+    display: none;
+  }
+
+  .progressFooter {
+    padding: 8px var(--gutter);
+  }
+
+  .seedChips {
+    display: none;
+  }
+
+  .entryCardNear,
+  .entryCardFar {
+    filter: none;
+    transform: none;
+    opacity: 0.25;
+  }
+}

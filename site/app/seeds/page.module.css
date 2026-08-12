@@ -1,0 +1,151 @@
+.seeds {
+  position: relative;
+  min-height: 100vh;
+  background: var(--paper);
+}
+
+.hero {
+  position: relative;
+  min-height: 400px;
+  padding: 80px var(--gutter);
+}
+
+.headline {
+  position: relative;
+  z-index: 1;
+  background: rgba(237,241,242,0.92);
+  padding: 20px;
+  max-width: 700px;
+  font-family: var(--font-geist), sans-serif;
+  font-weight: 700;
+  font-size: 44px;
+  line-height: 1.08;
+  letter-spacing: -2px;
+  text-transform: uppercase;
+  color: var(--ink);
+  text-shadow: var(--plate-text-shadow);
+}
+
+.headlineRed {
+  color: var(--red);
+}
+
+.intro {
+  position: relative;
+  z-index: 1;
+  background: rgba(237,241,242,0.92);
+  padding: 16px;
+  max-width: 720px;
+  font-family: var(--font-mono), monospace;
+  font-size: 14px;
+  line-height: 1.9;
+  color: var(--body-ink);
+  margin-top: 24px;
+}
+
+.list {
+  padding: 0 var(--gutter);
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 20px 0;
+  border-bottom: var(--rule-minor);
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+}
+
+.row:first-child {
+  border-top: var(--rule-major);
+}
+
+.row:hover {
+  background: rgba(11,11,11,0.02);
+}
+
+.icon {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  object-position: center;
+  border: 2px solid rgba(11,11,11,0.18);
+  box-shadow: 0 1px 4px rgba(0,0,0,0.12);
+  aspect-ratio: 1;
+  flex-shrink: 0;
+}
+
+.seedInfo {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.seedNameRow {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.seedName {
+  font-family: var(--font-oswald), sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  letter-spacing: 1px;
+}
+
+.footnote {
+  font-family: var(--font-mono), monospace;
+  font-size: 11px;
+  color: rgba(11,11,11,0.5);
+}
+
+.entryStat {
+  font-family: var(--font-mono), monospace;
+  font-size: 11px;
+  color: rgba(11,11,11,0.45);
+  letter-spacing: 1px;
+}
+
+.arrow {
+  font-size: 18px;
+  color: rgba(11,11,11,0.3);
+  flex-shrink: 0;
+}
+
+.footer {
+  background: var(--ink);
+  padding: 16px var(--gutter);
+  display: flex;
+  justify-content: space-between;
+  font-family: var(--font-mono), monospace;
+  font-size: 10px;
+  letter-spacing: 2px;
+  color: rgba(237,241,242,0.4);
+  text-transform: uppercase;
+  margin-top: var(--gap-section);
+}
+
+.footerLink {
+  color: var(--red-on-dark);
+  text-decoration: none;
+}
+
+@media (max-width: 899px) {
+  .hero {
+    min-height: 230px;
+    padding: 40px var(--gutter);
+  }
+
+  .headline {
+    font-size: 30px;
+  }
+
+  .icon {
+    width: 52px;
+    height: 52px;
+  }
+}

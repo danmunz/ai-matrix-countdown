@@ -1,0 +1,35 @@
+{
+  "detector": {
+    "ignoreRules": [],
+    "ignoreFiles": [],
+    "ignoreValues": [
+      {
+        "rule": "layout-transition",
+        "value": "height",
+        "files": [
+          "components/Scrubber.module.css"
+        ],
+        "createdAt": "2026-08-12T19:17:21.459Z",
+        "reason": "3px-wide rail fill; layout cost negligible"
+      },
+      {
+        "rule": "layout-transition",
+        "value": "height",
+        "files": [
+          "app/timeline/page.module.css"
+        ],
+        "createdAt": "2026-08-12T19:17:29.583Z",
+        "reason": "3px-wide rail fill; layout cost negligible"
+      },
+      {
+        "rule": "layout-transition",
+        "value": "width",
+        "files": [
+          "app/timeline/page.module.css"
+        ],
+        "createdAt": "2026-08-12T19:17:42.329Z",
+        "reason": "3px-tall progress bar; layout cost negligible"
+      }
+    ]
+  }
+}

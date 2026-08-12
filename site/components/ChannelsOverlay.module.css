@@ -1,0 +1,135 @@
+.overlay {
+  position: fixed;
+  top: 63px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: var(--ink);
+  z-index: 90;
+  display: flex;
+  animation: menuIn 140ms ease-out;
+}
+
+.content {
+  flex: 1;
+  padding: 64px var(--gutter);
+  max-width: 900px;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.row {
+  display: flex;
+  align-items: baseline;
+  gap: 16px;
+  padding: 18px 0;
+  border-bottom: 1px solid rgba(237,241,242,0.08);
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.row:hover .title {
+  color: var(--red-on-dark);
+}
+
+.ordinal {
+  font-family: var(--font-major), monospace;
+  font-size: 14px;
+  color: rgba(237,241,242,0.35);
+  width: 40px;
+  flex-shrink: 0;
+}
+
+.titleWrap {
+  flex: 1;
+}
+
+.title {
+  font-family: var(--font-geist), sans-serif;
+  font-weight: 700;
+  font-size: 48px;
+  line-height: 1.08;
+  letter-spacing: -2px;
+  text-transform: uppercase;
+  color: var(--paper);
+  min-height: 52px;
+  transition: color 0.15s;
+}
+
+.meta {
+  font-family: var(--font-mono), monospace;
+  font-size: 11px;
+  color: rgba(237,241,242,0.4);
+  margin-top: 4px;
+}
+
+.meta.active {
+  color: var(--red-on-dark);
+}
+
+.frescoStrip {
+  width: 270px;
+  flex-shrink: 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.frescoStripImg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  mix-blend-mode: screen;
+  opacity: 0.5;
+  filter: saturate(1.3);
+}
+
+.yellowStripe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 10px;
+  background: repeating-linear-gradient(
+    -45deg,
+    var(--yellow) 0 4px,
+    transparent 4px 8px
+  );
+}
+
+.footer {
+  margin-top: auto;
+  padding-top: 32px;
+  display: flex;
+  justify-content: space-between;
+  font-family: var(--font-mono), monospace;
+  font-size: 10px;
+  letter-spacing: 2px;
+  color: rgba(237,241,242,0.3);
+  text-transform: uppercase;
+}
+
+@media (max-width: 899px) {
+  .overlay {
+    top: auto;
+    top: 48px;
+  }
+
+  .content {
+    padding: 32px var(--gutter);
+  }
+
+  .title {
+    font-size: 30px;
+    letter-spacing: -1px;
+  }
+
+  .frescoStrip {
+    display: none;
+  }
+
+  .ordinal {
+    width: 28px;
+    font-size: 11px;
+  }
+}

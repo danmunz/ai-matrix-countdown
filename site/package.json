@@ -1,0 +1,23 @@
+{
+  "name": "site",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "optimize-images": "node scripts/optimize-images.mjs",
+    "build": "npm run optimize-images && next build",
+    "start": "next start"
+  },
+  "dependencies": {
+    "next": "16.3.0",
+    "react": "19.2.8",
+    "react-dom": "19.2.8"
+  },
+  "devDependencies": {
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "sharp": "^0.35.3",
+    "typescript": "^5"
+  }
+}

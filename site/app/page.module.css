@@ -1,0 +1,383 @@
+.landing {
+  position: relative;
+  min-height: 100vh;
+  background: var(--paper);
+  overflow: hidden;
+}
+
+/* Hero zone */
+.hero {
+  position: relative;
+  min-height: 452px;
+  display: flex;
+  padding: 0 var(--gutter);
+}
+
+.heroLeft {
+  flex: 1;
+  padding-top: 128px;
+  position: relative;
+  z-index: 1;
+}
+
+.introSlab {
+  background: rgba(237,241,242,0.92);
+  padding: 16px;
+  max-width: 440px;
+  font-family: var(--font-mono), monospace;
+  font-size: 19px;
+  line-height: 1.5;
+  color: rgba(11,11,11,0.7);
+  text-align: justify;
+}
+
+.ghostPhrase {
+  margin-top: 22px;
+  height: 88px;
+  overflow: hidden;
+  font-family: var(--font-geist), sans-serif;
+  font-weight: 700;
+  font-size: 27px;
+  text-transform: uppercase;
+  color: rgba(11,11,11,0.32);
+  line-height: 1.15;
+  max-width: 440px;
+}
+
+.heroRight {
+  position: absolute;
+  top: 96px;
+  right: var(--gutter);
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+/* Odometer */
+.odometer {
+  font-family: var(--font-geist), sans-serif;
+  font-weight: 700;
+  font-size: 250px;
+  line-height: 0.85;
+  color: var(--ink);
+  text-shadow: 2px 2px 0 rgba(237,241,242,0.85);
+  display: flex;
+  letter-spacing: -12px;
+  white-space: nowrap;
+}
+
+.statementBand {
+  background: var(--ink);
+  padding: 10px 18px;
+  font-family: var(--font-oswald), sans-serif;
+  font-weight: 600;
+  font-size: 23px;
+  letter-spacing: 4px;
+  color: var(--paper);
+  text-transform: uppercase;
+  white-space: nowrap;
+  margin-top: 4px;
+}
+
+.dayZeroMeta {
+  background: rgba(237,241,242,0.85);
+  padding: 4px 8px;
+  font-family: var(--font-mono), monospace;
+  font-size: 11px;
+  letter-spacing: 3px;
+  color: rgba(11,11,11,0.55);
+  text-transform: uppercase;
+  margin-top: 4px;
+}
+
+/* Stripe band */
+.stripe {
+  position: relative;
+  height: 132px;
+  background: repeating-linear-gradient(115deg, var(--ink) 0 13px, var(--paper) 13px 26px);
+  animation: stripeDrift 46s linear infinite;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.stripeCard {
+  background: var(--paper);
+  padding: 16px 32px;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+
+.stripeTitle {
+  font-family: var(--font-archivo), sans-serif;
+  font-weight: 400;
+  font-size: 40px;
+  text-transform: uppercase;
+  color: var(--ink);
+  line-height: 1.1;
+}
+
+.stripeSub {
+  font-family: var(--font-mono), monospace;
+  font-size: 12px;
+  color: rgba(11,11,11,0.5);
+  letter-spacing: 1px;
+  margin-top: 4px;
+}
+
+/* Marquee */
+.marquee {
+  height: 38px;
+  overflow: hidden;
+  background: var(--paper);
+  border-top: var(--rule-minor);
+  border-bottom: var(--rule-minor);
+  display: flex;
+  align-items: center;
+}
+
+.marqueeTrack {
+  display: flex;
+  white-space: nowrap;
+  animation: marqueeL 68s linear infinite;
+  font-family: var(--font-mono), monospace;
+  font-size: 12px;
+  letter-spacing: 2px;
+  color: rgba(11,11,11,0.4);
+  text-transform: uppercase;
+}
+
+.marqueeTrack span {
+  padding-right: 24px;
+}
+
+/* Seed row */
+.seedSection {
+  padding: 0 var(--gutter);
+}
+
+.seedHeader {
+  border-top: var(--rule-major);
+  padding: 12px 0;
+  font-family: var(--font-oswald), sans-serif;
+  font-weight: 500;
+  font-size: 12px;
+  letter-spacing: 3px;
+  color: rgba(11,11,11,0.5);
+  text-transform: uppercase;
+}
+
+.seedRow {
+  display: flex;
+  border-top: var(--rule-minor);
+}
+
+.seedCol {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  padding: 20px 8px;
+  text-align: center;
+  border-right: var(--rule-minor);
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.seedCol:last-child {
+  border-right: none;
+}
+
+.seedCol:hover {
+  background: rgba(11,11,11,0.03);
+}
+
+.seedIcon {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  object-position: center;
+  border: 2px solid rgba(11,11,11,0.18);
+  box-shadow: 0 1px 4px rgba(0,0,0,0.12);
+  aspect-ratio: 1;
+}
+
+.seedGlyphWrap {
+  animation: glyphBreath 7s ease-in-out infinite;
+}
+
+.seedName {
+  font-family: var(--font-oswald), sans-serif;
+  font-weight: 600;
+  font-size: 15px;
+  letter-spacing: 1px;
+}
+
+.seedFootnote {
+  font-family: var(--font-mono), monospace;
+  font-size: 10px;
+  color: rgba(11,11,11,0.45);
+}
+
+/* CTA row */
+.ctaRow {
+  display: flex;
+  border-top: var(--rule-major);
+}
+
+.ctaBegin {
+  flex: 1;
+  position: relative;
+  background: var(--red);
+  padding: 20px var(--gutter);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  overflow: hidden;
+  text-decoration: none;
+  color: var(--paper);
+  min-height: 86px;
+}
+
+.ctaBeginText {
+  font-family: var(--font-geist), sans-serif;
+  font-weight: 700;
+  font-size: 26px;
+  text-transform: uppercase;
+  letter-spacing: -1px;
+  position: relative;
+  z-index: 1;
+}
+
+.ctaBeginMeta {
+  font-family: var(--font-mono), monospace;
+  font-size: 11px;
+  color: rgba(237,241,242,0.7);
+  position: relative;
+  z-index: 1;
+}
+
+.ctaSecondary {
+  display: flex;
+  gap: 24px;
+  padding: 20px 32px;
+  align-items: center;
+  border-left: var(--rule-major);
+}
+
+.ctaSecondaryLink {
+  font-family: var(--font-oswald), sans-serif;
+  font-weight: 500;
+  font-size: 15px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--ink);
+  text-decoration: none;
+}
+
+.ctaSecondaryLink:hover {
+  color: var(--red);
+}
+
+/* Footer */
+.footer {
+  display: flex;
+  justify-content: space-between;
+  padding: 12px var(--gutter);
+  font-family: var(--font-mono), monospace;
+  font-size: 10px;
+  letter-spacing: 2px;
+  color: rgba(11,11,11,0.4);
+  text-transform: uppercase;
+  border-top: var(--rule-minor);
+}
+
+/* Mobile */
+@media (max-width: 899px) {
+  .hero {
+    flex-direction: column;
+    min-height: 300px;
+    padding-top: 0;
+  }
+
+  .heroLeft {
+    padding-top: 20px;
+  }
+
+  .introSlab {
+    font-size: 12px;
+    line-height: 1.65;
+    max-width: 100%;
+  }
+
+  .heroRight {
+    position: relative;
+    top: auto;
+    right: auto;
+    align-items: flex-start;
+    padding: 20px var(--gutter);
+  }
+
+  .odometer {
+    font-size: 54px;
+    letter-spacing: -3px;
+  }
+
+  .statementBand {
+    font-size: 10px;
+    letter-spacing: 2px;
+    padding: 6px 10px;
+  }
+
+  .ghostPhrase {
+    font-size: 18px;
+    height: auto;
+    max-height: 60px;
+  }
+
+  .stripe {
+    height: 64px;
+  }
+
+  .stripeTitle {
+    font-size: 17px;
+  }
+
+  .stripeSub {
+    font-size: 10px;
+  }
+
+  .seedRow {
+    flex-direction: column;
+  }
+
+  .seedCol {
+    flex-direction: row;
+    justify-content: flex-start;
+    gap: 12px;
+    padding: 14px 0;
+    border-right: none;
+    border-bottom: var(--rule-minor);
+  }
+
+  .seedIcon {
+    width: 52px;
+    height: 52px;
+  }
+
+  .ctaSecondary {
+    display: none;
+  }
+
+  .ctaBegin {
+    min-height: 64px;
+  }
+
+  .ctaBeginText {
+    font-size: 18px;
+  }
+}
