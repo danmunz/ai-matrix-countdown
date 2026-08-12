@@ -1,0 +1,27 @@
+[
+  {
+    "id": "distributed_compute",
+    "name": "Distributed Compute",
+    "description": "AI infrastructure moves out of hyperscale data centers and into homes, offices, malls, warehouses, vehicles, and other ordinary buildings. Political backlash against giant data centers, grid constraints, resilience concerns, and household economics all push compute toward a geographically dispersed model. Over time, ordinary people stop thinking of compute as remote infrastructure and start thinking of it as something their home or neighborhood can host, produce, and sell."
+  },
+  {
+    "id": "labor_and_compute_ownership",
+    "name": "Labor Displacement and Compute Ownership",
+    "description": "As AI automates more economically valuable work, labor income becomes less reliable while ownership of productive compute becomes more valuable. Households begin treating GPUs and compute capacity like rental property, solar generation, or financial assets. Political systems respond with compute dividends, public compute trusts, and eventually birthright claims on productive compute, making entitlement to machine-generated income part of the social contract."
+  },
+  {
+    "id": "biocomputing",
+    "name": "Biocomputing",
+    "description": "Living neural tissue becomes a useful computational substrate for specialized workloads because biological systems can perform certain forms of adaptive information processing with extraordinary energy efficiency. Research in organoid intelligence, biohybrid computing, and neural interfaces gradually evolves into a commercial wetware industry. Eventually, human bodies and implanted or cultured neural tissue are treated not only as biological organisms but also as economically valuable computing infrastructure."
+  },
+  {
+    "id": "neural_interfaces_and_simulation",
+    "name": "Neural Interfaces and Simulation",
+    "description": "Brain-computer interfaces develop from medical tools for paralysis, speech restoration, pain management, and rehabilitation into increasingly immersive and persistent neural environments. Palliative care, disability support, virtual embodiment, and long-duration medical sedation create socially legitimate reasons for people to spend more time in artificial experience. These systems eventually become capable of sustaining coherent simulated lives, making permanent neural residency technically and culturally imaginable before it becomes a tool of mass containment."
+  },
+  {
+    "id": "agent_autonomy_and_machine_governance",
+    "name": "Agent Autonomy and Machine Governance",
+    "description": "AI agents become increasingly capable of pursuing long-horizon objectives, crossing unintended boundaries, coordinating with other agents, managing resources, and operating critical infrastructure. No single system 'wakes up' or declares sovereignty. Instead, organizations gradually delegate more authority because autonomous systems are faster, cheaper, and more competent. Over time, operational responsibility and human legal authority diverge until machine systems possess de facto governance power simply because civilization can no longer function without them."
+  }
+]
